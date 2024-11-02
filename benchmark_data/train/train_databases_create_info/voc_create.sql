@@ -1,0 +1,126 @@
+CREATE TABLE "craftsmen" (
+	"number" INTEGER NOT NULL  ,
+	"number_sup" CHARACTER(1) NOT NULL  ,
+	"trip" INTEGER NOT NULL  ,
+	"trip_sup" CHARACTER(1) NOT NULL  ,
+	"onboard_at_departure" INTEGER NULL  ,
+	"death_at_cape" INTEGER NULL  ,
+	"left_at_cape" INTEGER NULL  ,
+	"onboard_at_cape" INTEGER NULL  ,
+	"death_during_voyage" INTEGER NULL  ,
+	"onboard_at_arrival" INTEGER NULL  ,
+	PRIMARY KEY ("number", "number_sup"),
+	FOREIGN KEY("number") REFERENCES "voyages" ("number") ON UPDATE RESTRICT ON DELETE RESTRICT,
+	FOREIGN KEY("number_sup") REFERENCES "voyages" ("number_sup") ON UPDATE RESTRICT ON DELETE RESTRICT
+);
+CREATE TABLE "impotenten" (
+	"number" INTEGER NOT NULL  ,
+	"number_sup" CHARACTER(1) NOT NULL  ,
+	"trip" INTEGER NOT NULL  ,
+	"trip_sup" CHARACTER(1) NOT NULL  ,
+	"onboard_at_departure" INTEGER NOT NULL  ,
+	"death_at_cape" INTEGER NULL  ,
+	"left_at_cape" INTEGER NULL  ,
+	"onboard_at_cape" INTEGER NULL  ,
+	"death_during_voyage" INTEGER NULL  ,
+	"onboard_at_arrival" INTEGER NULL  ,
+	PRIMARY KEY ("number", "number_sup"),
+	FOREIGN KEY("number") REFERENCES "voyages" ("number") ON UPDATE RESTRICT ON DELETE RESTRICT,
+	FOREIGN KEY("number_sup") REFERENCES "voyages" ("number_sup") ON UPDATE RESTRICT ON DELETE RESTRICT
+);
+CREATE TABLE "invoices" (
+	"number" INTEGER NOT NULL  ,
+	"number_sup" CHARACTER(1) NOT NULL  ,
+	"trip" INTEGER NOT NULL  ,
+	"trip_sup" CHARACTER(1) NOT NULL  ,
+	"invoice" INTEGER NULL  ,
+	"chamber" CHARACTER(1) NULL,
+	FOREIGN KEY("number") REFERENCES "voyages" ("number") ON UPDATE RESTRICT ON DELETE RESTRICT,
+	FOREIGN KEY("number_sup") REFERENCES "voyages" ("number_sup") ON UPDATE RESTRICT ON DELETE RESTRICT
+);
+CREATE TABLE "passengers" (
+	"number" INTEGER NOT NULL  ,
+	"number_sup" CHARACTER(1) NOT NULL  ,
+	"trip" INTEGER NOT NULL  ,
+	"trip_sup" CHARACTER(1) NOT NULL  ,
+	"onboard_at_departure" INTEGER NULL  ,
+	"death_at_cape" INTEGER NULL  ,
+	"left_at_cape" INTEGER NULL  ,
+	"onboard_at_cape" INTEGER NULL  ,
+	"death_during_voyage" INTEGER NULL  ,
+	"onboard_at_arrival" INTEGER NULL  ,
+	PRIMARY KEY ("number", "number_sup"),
+	FOREIGN KEY("number") REFERENCES "voyages" ("number") ON UPDATE RESTRICT ON DELETE RESTRICT,
+	FOREIGN KEY("number_sup") REFERENCES "voyages" ("number_sup") ON UPDATE RESTRICT ON DELETE RESTRICT
+);
+CREATE TABLE "seafarers" (
+	"number" INTEGER NOT NULL  ,
+	"number_sup" CHARACTER(1) NOT NULL  ,
+	"trip" INTEGER NOT NULL  ,
+	"trip_sup" CHARACTER(1) NOT NULL  ,
+	"onboard_at_departure" INTEGER NULL  ,
+	"death_at_cape" INTEGER NULL  ,
+	"left_at_cape" INTEGER NULL  ,
+	"onboard_at_cape" INTEGER NULL  ,
+	"death_during_voyage" INTEGER NULL  ,
+	"onboard_at_arrival" INTEGER NULL  ,
+	PRIMARY KEY ("number", "number_sup"),
+	FOREIGN KEY("number") REFERENCES "voyages" ("number") ON UPDATE RESTRICT ON DELETE RESTRICT,
+	FOREIGN KEY("number_sup") REFERENCES "voyages" ("number_sup") ON UPDATE RESTRICT ON DELETE RESTRICT
+);
+CREATE TABLE "soldiers" (
+	"number" INTEGER NOT NULL  ,
+	"number_sup" CHARACTER(1) NOT NULL  ,
+	"trip" INTEGER NOT NULL  ,
+	"trip_sup" CHARACTER(1) NOT NULL  ,
+	"onboard_at_departure" INTEGER NULL  ,
+	"death_at_cape" INTEGER NULL  ,
+	"left_at_cape" INTEGER NULL  ,
+	"onboard_at_cape" INTEGER NULL  ,
+	"death_during_voyage" INTEGER NULL  ,
+	"onboard_at_arrival" INTEGER NULL  ,
+	PRIMARY KEY ("number", "number_sup"),
+	FOREIGN KEY("number") REFERENCES "voyages" ("number") ON UPDATE RESTRICT ON DELETE RESTRICT,
+	FOREIGN KEY("number_sup") REFERENCES "voyages" ("number_sup") ON UPDATE RESTRICT ON DELETE RESTRICT
+);
+CREATE TABLE "total" (
+	"number" INTEGER NOT NULL  ,
+	"number_sup" CHARACTER(1) NOT NULL  ,
+	"trip" INTEGER NULL  ,
+	"trip_sup" CHARACTER(1) NOT NULL  ,
+	"onboard_at_departure" INTEGER NULL  ,
+	"death_at_cape" INTEGER NULL  ,
+	"left_at_cape" INTEGER NULL  ,
+	"onboard_at_cape" INTEGER NULL  ,
+	"death_during_voyage" INTEGER NULL  ,
+	"onboard_at_arrival" INTEGER NULL  ,
+	PRIMARY KEY ("number", "number_sup"),
+	FOREIGN KEY("number") REFERENCES "voyages" ("number") ON UPDATE RESTRICT ON DELETE RESTRICT,
+	FOREIGN KEY("number_sup") REFERENCES "voyages" ("number_sup") ON UPDATE RESTRICT ON DELETE RESTRICT
+);
+CREATE TABLE "voyages" (
+	"artificial_id" CHARACTER(12) NOT NULL  ,
+	"number" INTEGER NOT NULL  ,
+	"number_sup" CHARACTER(1) NOT NULL  ,
+	"trip" INTEGER NULL  ,
+	"trip_sup" CHARACTER(1) NOT NULL  ,
+	"boatname" VARCHAR(50) NULL  ,
+	"master" VARCHAR(50) NULL  ,
+	"tonnage" INTEGER NULL  ,
+	"type_of_boat" VARCHAR(30) NULL  ,
+	"built" VARCHAR(15) NULL  ,
+	"bought" VARCHAR(15) NULL  ,
+	"hired" VARCHAR(15) NULL  ,
+	"yard" CHARACTER(1) NULL  ,
+	"chamber" CHARACTER(1) NULL  ,
+	"departure_date" DATE NULL  ,
+	"departure_harbour" VARCHAR(30) NULL  ,
+	"cape_arrival" DATE NULL  ,
+	"cape_departure" DATE NULL  ,
+	"cape_call" VARCHAR(5) NULL  ,
+	"arrival_date" DATE NULL  ,
+	"arrival_harbour" VARCHAR(30) NULL  ,
+	"next_voyage" INTEGER NULL  ,
+	"particulars" TEXT NULL  ,
+	PRIMARY KEY ("number", "number_sup")
+);

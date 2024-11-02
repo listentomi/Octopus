@@ -1,0 +1,30 @@
+[
+  {
+    "sql": "SELECT T1.AMT_RECEIVABLE_PRINCIPAL FROM credit_card_balance AS T1 WHERE T1.SK_ID_PREV NOT IN (SELECT T22.SK_ID_PREV FROM previous AS T22)",
+    "question": "What are the amounts receivable for principal on credit card balances that are not listed in previous records?"
+  },
+  {
+    "sql": "SELECT T1.SK_ID_PREV FROM installments_payments AS T1 WHERE T1.SK_ID_CURR NOT IN (SELECT T22.SK_ID_CURR FROM previous AS T22)",
+    "question": "What are the IDs of the previous installment payments that are not associated with any previous credits in our sample?"
+  },
+  {
+    "sql": "SELECT T1.STATUS FROM bureau_balance AS T1 WHERE T1.SK_ID_BUREAU NOT IN (SELECT T22.SK_ID_BUREAU FROM bureau AS T22)",
+    "question": "What are the statuses of bureau balance records that do not have a corresponding bureau ID?"
+  },
+  {
+    "sql": "SELECT T1.SK_DPD FROM pos_cash_balance AS T1 WHERE T1.SK_ID_CURR NOT IN (SELECT T22.SK_ID_CURR FROM previous AS T22)",
+    "question": "What are the days past due for accounts in the POS cash balance that are not present in the previous records?"
+  },
+  {
+    "sql": "SELECT T1.CREDIT_DAY_OVERDUE FROM bureau AS T1 WHERE T1.SK_ID_BUREAU NOT IN (SELECT T22.SK_ID_BUREAU FROM bureau_balance AS T22)",
+    "question": "What are the number of days overdue on credit for the bureaus that are not listed in the bureau balance records?"
+  },
+  {
+    "sql": "SELECT T1.NUM_INSTALMENT_NUMBER FROM installments_payments AS T1 WHERE T1.SK_ID_PREV NOT IN (SELECT T22.SK_ID_PREV FROM previous AS T22)",
+    "question": "List the installment numbers for payments not associated with any previous record."
+  },
+  {
+    "sql": "SELECT T1.NAME_HOUSING_TYPE FROM application_test AS T1 WHERE T1.AMT_ANNUITY NOT IN (SELECT T22.AMT_ANNUITY FROM bureau AS T22)",
+    "question": "What are the types of housing for applications where the annuity amount is not recorded in the bureau records?"
+  }
+]

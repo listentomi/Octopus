@@ -1,0 +1,373 @@
+[
+    {
+        "db_name": "airline",
+        "url": "https://www.kaggle.com/datasets/mohammadkaiftahir/airline-dataset",
+        "description": "### Table: aircrafts_data\n\n| Column Name    | Data Type       | Description                          |\n| -------------- | --------------- | ------------------------------------ |\n| aircraft_code  | character(3)    | Code for the aircraft                |\n| model          | jsonb           | Aircraft model in JSON format        |\n| range          | integer         | The range of the aircraft            |\n\n### Table: airports_data\n\n| Column Name    | Data Type       | Description                          |\n| -------------- | --------------- | ------------------------------------ |\n| airport_code   | character(3)    | Code for the airport                 |\n| airport_name   | jsonb           | Name of the airport in JSON format   |\n| city           | jsonb           | City where the airport is located    |\n| coordinates    | point           | Geographic coordinates of the airport|\n| timezone       | text            | Timezone of the airport              |\n\n### Table: boarding_passes\n\n| Column Name    | Data Type       | Description                          |\n| -------------- | --------------- | ------------------------------------ |\n| ticket_no      | character(13)   | Ticket number                        |\n| flight_id      | integer         | ID of the flight                      |\n| boarding_no    | integer         | Boarding number                      |\n| seat_no        | character varying(4) | Seat number                      |\n\n### Table: bookings\n\n| Column Name    | Data Type               | Description                          |\n| -------------- | ----------------------- | ------------------------------------ |\n| book_ref       | character(6)            | Booking reference                    |\n| book_date      | timestamp with time zone | Booking date with timestamp and time zone |\n| total_amount   | numeric(10,2)           | Total booking amount                 |\n\n### Table: flights\n\n| Column Name        | Data Type               | Description                          |\n| ------------------ | ----------------------- | ------------------------------------ |\n| flight_id          | integer                 | Flight ID                            |\n| flight_no          | character(6)            | Flight number                        |\n| scheduled_departure| timestamp with time zone | Scheduled departure time with timestamp and time zone |\n| scheduled_arrival  | timestamp with time zone | Scheduled arrival time with timestamp and time zone |\n| departure_airport  | character(3)            | Departure airport code               |\n| arrival_airport    | character(3)            | Arrival airport code                 |\n| status             | character varying(20)   | Flight status                        |\n| aircraft_code      | character(3)            | Aircraft code                        |\n| actual_departure   | timestamp with time zone | Actual departure time with timestamp and time zone |\n| actual_arrival     | timestamp with time zone | Actual arrival time with timestamp and time zone |\n\n### Table: seats\n\n| Column Name    | Data Type           | Description                          |\n| -------------- | ------------------- | ------------------------------------ |\n| aircraft_code  | character(3)        | Aircraft code                        |\n| seat_no        | character varying(4)| Seat number                          |\n| fare_conditions| character varying(10)| Fare conditions                      |\n\n### Table: ticket_flights\n\n| Column Name    | Data Type           | Description                          |\n| -------------- | ------------------- | ------------------------------------ |\n| ticket_no      | character(13)       | Ticket number                        |\n| flight_id      | integer             | ID of the flight                      |\n| fare_conditions| character varying(10)| Fare conditions                      |\n| amount         | numeric(10,2)        | Ticket amount                         |\n\n### Table: tickets\n\n| Column Name    | Data Type           | Description                          |\n| -------------- | ------------------- | ------------------------------------ |\n| ticket_no      | character(13)       | Ticket number                        |\n| book_ref       | character(6)        | Booking reference                    |\n| passenger_id   | character varying(20)| Passenger ID                         |\n"
+    },
+    {
+        "db_name": "airport",
+        "url": "https://dev.mysql.com/doc/index-other.html"
+    },
+    {
+        "db_name": "aspartic",
+        "url": "https://wikidbs.github.io/"
+    },
+    {
+        "db_name": "athletics",
+        "url": "https://wikidbs.github.io/"
+    },
+    {
+        "db_name": "employees",
+        "url": "https://dev.mysql.com/doc/index-other.html"
+    },
+    {
+        "db_name": "home_credit_default",
+        "url": "https://www.kaggle.com/c/home-credit-default-risk/data",
+        "description": "\n\napplication_{train|test}.csv\n\nThis is the main table, broken into two files for Train (with TARGET) and Test (without TARGET).\nStatic data for all applications. One row represents one loan in our data sample.\nbureau.csv\n\nAll client's previous credits provided by other financial institutions that were reported to Credit Bureau (for clients who have a loan in our sample).\nFor every loan in our sample, there are as many rows as number of credits the client had in Credit Bureau before the application date.\nbureau_balance.csv\n\nMonthly balances of previous credits in Credit Bureau.\nThis table has one row for each month of history of every previous credit reported to Credit Bureau – i.e the table has (#loans in sample * # of relative previous credits * # of months where we have some history observable for the previous credits) rows.\nPOS_CASH_balance.csv\n\nMonthly balance snapshots of previous POS (point of sales) and cash loans that the applicant had with Home Credit.\nThis table has one row for each month of history of every previous credit in Home Credit (consumer credit and cash loans) related to loans in our sample – i.e. the table has (#loans in sample * # of relative previous credits * # of months in which we have some history observable for the previous credits) rows.\ncredit_card_balance.csv\n\nMonthly balance snapshots of previous credit cards that the applicant has with Home Credit.\nThis table has one row for each month of history of every previous credit in Home Credit (consumer credit and cash loans) related to loans in our sample – i.e. the table has (#loans in sample * # of relative previous credit cards * # of months where we have some history observable for the previous credit card) rows.\nprevious_application.csv\n\nAll previous applications for Home Credit loans of clients who have loans in our sample.\nThere is one row for each previous application related to loans in our data sample.\ninstallments_payments.csv\n\nRepayment history for the previously disbursed credits in Home Credit related to the loans in our sample.\nThere is a) one row for every payment that was made plus b) one row each for missed payment.\nOne row is equivalent to one payment of one installment OR one installment corresponding to one payment of one previous Home Credit credit related to loans in our sample.\nHomeCredit_columns_description.csv\n\nThis file contains descriptions for the columns in the various data files.\n\n"
+    },
+    {
+        "db_name": "hospital",
+        "url": "https://wikidbs.github.io/"
+    },
+    {
+        "db_name": "indicators_2022",
+        "url": "https://www.kaggle.com/datasets/faduregis/world-development-indicators-2022/data?select=WDISeries.csv",
+        "description": "**World Development Indicators**\nThe World Development Indicators (WDI) is the primary World Bank collection of development indicators, compiled from officially-recognized international sources. It presents the most current and accurate global development data available and includes national, regional and g and global estimates."
+    },
+    {
+        "db_name": "italy",
+        "url": "https://wikidbs.github.io/"
+    },
+    {
+        "db_name": "matches_football",
+        "url": "https://www.kaggle.com/datasets/prajitdatta/ultimate-25k-matches-football-database-european/data",
+        "description": "**The ultimate Soccer database for data analysis and machine learning\n-------------------------------------------------------------------\n\nWhat you get:**\n\n - +25,000 matches\n - +10,000 players \n - 11 European Countries with their lead championship \n - Seasons 2008 to 2016 \n - Players and Teams' attributes* sourced from EA Sports' FIFA video game series, including the weekly updates  -  - Team line up with squad formation (X, Y coordinates) \n - Betting odds from up to 10 providers \n - Detailed match events (goal types, possession, corner, cross, fouls, cards etc...) for +10,000 matches\n\n**16th Oct 2016: New table containing teams' attributes from FIFA !*\n\n\n----------\n\n\n**Original Data Source:**\n\nYou can easily find data about soccer matches but they are usually scattered across different websites. A thorough data collection and processing has been done to make your life easier. **I must insist that you do not make any commercial use of the data.** The data was sourced from:\n\n - [http://football-data.mx-api.enetscores.com/][1] : scores, lineup, team formation and events\n - [http://www.football-data.co.uk/][2] : betting odds. [Click here to understand the column naming system for betting odds:][3]\n - [http://sofifa.com/][4] : players and teams attributes from EA Sports FIFA games. *FIFA series and all FIFA assets property of EA Sports.*\n\nWhen you have a look at the database, you will notice foreign keys for players and matches are the same as the original data sources. I have called those foreign keys \"api_id\".\n\n\n----------\n\n**Improving the dataset:**\n\nYou will notice that some players are missing from the lineup (NULL values). This is because I have not been able to source their attributes from FIFA. This will be fixed overtime as the crawling algorithm is being improved. The dataset will also be expanded to include international games, national cups, Champion's League and Europa League. Please ask me if you're after a specific tournament.\n\nPlease get in touch with **Hugo Mathien** if you want to help improve this dataset.\n\n[CLICK HERE TO ACCESS THE PROJECT GITHUB][5]\n\nImportant note for people interested in using the crawlers: since I first wrote the crawling scripts (in python), it appears sofifa.com has changed its design and with it comes new requirements for the scripts. The existing script to crawl players ('Player Spider') will not work until i've updated it.\n\n\n----------\n\n\nExploring the data:\n\nNow that's the fun part, there is a lot you can do with this dataset. I will be adding visuals and insights to this overview page but please have a look at the kernels and give it a try yourself ! Here are some ideas for you:\n\n**The Holy Grail... ...** is obviously to predict the outcome of the game. The bookies use 3 classes (Home Win, Draw, Away Win). They get it right about 53% of the time. This is also what I've achieved so far using my own SVM. Though it may sound high for such a random sport game, you've got to know that the home team wins about 46% of the time. So the base case (constantly predicting Home Win) has indeed 46% precision.\n\n**Probabilities vs Odds**\n\nWhen running a multi-class classifier like SVM you could also output a probability estimate and compare it to the betting odds. Have a look at your variance vs odds and see for what games you had very different predictions.\n\n**Explore and visualize features**\n\nWith access to players and teams attributes, team formations and in-game events you should be able to produce some interesting insights into The Beautiful Game . Who knows, Guardiola himself may hire one of you some day!\nDatabase released under Open Database License, individual papers copyright their original authors\n\n\n  [1]: http://football-data.mx-api.enetscores.com/\n  [2]: http://www.football-data.co.uk/\n  [3]: http://www.football-data.co.uk/notes.txt\n  [4]: http://sofifa.com/\n  [5]: https://github.com/hugomathien/football-data-collection/tree/master/footballData"
+    },
+    {
+        "db_name": "menagerie",
+        "url": "https://dev.mysql.com/doc/index-other.html"
+    },
+    {
+        "db_name": "NBA",
+        "url": "https://www.kaggle.com/datasets/wyattowalsh/basketball",
+        "description": "<blockquote><h2>Welcome to the <i><b>NBA Database</b></i>! 👋 🏀 ⛹️‍♂️ </h2></blockquote>\n\nThis dataset is updated daily and includes:\n\n- **30** teams\n- **4800+** players\n- **65,000+** games (every game since the inaugural 1946-47 NBA season)\n- **Box Scores** for over 95% of all games\n- **Play-by-Play** game data with ***13M+ rows*** of Play-by-Play data in all!\n\n\n---\n\n- See [here](https://www.kaggle.com/wyattowalsh/using-sql) for tips on using SQL with this database\n- [daily updater notebook](https://www.kaggle.com/code/wyattowalsh/database-updater-daily) and [monthly updater notebook](https://www.kaggle.com/code/wyattowalsh/database-updater-monthly)\n\n⮕ View the <a href=\"https://github.com/wyattowalsh/nba-db\">associated GitHub repo<img src=\"https://gist.githubusercontent.com/wyattowalsh/33b635109116e07044c6336527681051/raw/6b24b749532f4e167657fcc014a310b8c4bfa661/github.svg\"></a> and [code base docs site 📄](https://nba-db.readthedocs.io/)\n⮕ Sponsor project: <a href=\"https://github.com/sponsors/wyattowalsh\"><img src=\"https://img.shields.io/static/v1?label=Sponsor&amp;message=%E2%9D%A4&amp;logo=GitHub&amp;color=%23fe8e86\"></a>\n\n---\n\n<h5>Built With:</h5>\n \n<a href=\"https://www.kaggle.com/docs\" target=\"_blank\"><img alt=\"Kaggle\" src=\"https://img.shields.io/badge/kaggle-%2320BEFF.svg?&amp;style=for-the-badge&amp;logo=kaggle&amp;logoColor=white\"></a><a href=\"https://docs.github.com/en\" target=\"_blank\"><img alt=\"GitHub\" src=\"https://img.shields.io/badge/github-%23181717.svg?&amp;style=for-the-badge&amp;logo=github&amp;logoColor=white\"></a><a href=\"https://docs.python.org/3/\" target=\"_blank\"><img alt=\"Python\" src=\"https://img.shields.io/badge/python%20-%2314354C.svg?&amp;style=for-the-badge&amp;logo=python&amp;logoColor=white\"></a><a href=\"https://sqlite.org/docs.html\" target=\"_blank\"><img alt=\"SQLite\" src=\"https://img.shields.io/badge/sqlite%20-%23003B57.svg?&amp;style=for-the-badge&amp;logo=sqlite&amp;logoColor=white\"></a> <img src=\"https://raw.githubusercontent.com/wyattowalsh/nba-db/main/docs/_static/img/logo.svg\">\n"
+    },
+    {
+        "db_name": "pitchfork",
+        "url": "https://www.kaggle.com/datasets/nolanbconaway/pitchfork-data/data",
+        "description": "# Context \n\n[Pitchfork](https://pitchfork.com/) is a music-centric online magazine. It was started in 1995 and grew out of independent music reviewing into a general publication format, but is still famed for its variety music reviews. I scraped over 18,000 [Pitchfork][1] reviews (going back to January 1999). Initially, this was done to satisfy a few of [my own curiosities][2], but I bet Kagglers can come up with some really interesting analyses! \n\n# Content\n\nThis dataset is provided as a `sqlite` database with the following tables: `artists`, `content`, `genres`, `labels`, `reviews`, `years`. For column-level information on specific tables, refer to the [Metadata tab](https://www.kaggle.com/nolanbconaway/pitchfork-data/data).\n\n# Inspiration\n\n* Do review scores for individual artists generally improve over time, or go down?\n* How has Pitchfork's review genre selection changed over time?\n* Who are the most highly rated artists? The least highly rated artists?\n\n# Acknowledgements\n\nGotta love [Beautiful Soup][4]!\n\n  [1]: http://pitchfork.com/\n  [2]: https://github.com/nolanbconaway/pitchfork-data\n  [3]: https://github.com/nolanbconaway/pitchfork-data/tree/master/scrape\n  [4]: https://www.crummy.com/software/BeautifulSoup/"
+    },
+    {
+        "db_name": "prediction",
+        "url": "https://www.kaggle.com/c/outbrain-click-prediction/data",
+        "description": "\n\nDataset Description\n    Data Use Update: The Competition Sponsor has updated the permitted use of this competition's dataset. You may access and use the Competition Data for any purpose, whether commercial or non-commercial, including for participating in the Competition and on Kaggle.com forums, and for academic research and education.\n    The dataset for this challenge contains a sample of users’ page views and clicks, as observed on multiple publisher sites in the United States between 14-June-2016 and 28-June-2016. Each viewed page or clicked recommendation is further accompanied by some semantic attributes of those documents. For full details, see data specifications below.\n    The dataset contains numerous sets of content recommendations served to a specific user in a specific context. Each context (i.e. a set of recommendations) is given a display_id. In each such set, the user has clicked on at least one recommendation. The identities of the clicked recommendations in the test set are not revealed. Your task is to rank the recommendations in each group by decreasing predicted likelihood of being clicked.\n    As a warning, this is a very large relational dataset. While most of the tables are small enough to fit in memory, the page views log (page_views.csv) is over 2 billion rows and 100GB uncompressed. We have also uploaded a sample version of this file with the first 10,\n    000,\n    000 rows. The MD5 checksum of page_views.csv.zip is 3742c116bab4030e0a7ea1c0be623bd9.\n    Data Fields\n    Each user in the dataset is represented by a unique id (uuid). A person can view a document (document_id), which is simply a web page with content (e.g.  a news article). On each document, a set of ads (ad_id) are displayed. Each ad belongs to a campaign (campaign_id) run by an advertiser (advertiser_id). You are also provided metadata about the document, such as which entities are mentioned, a taxonomy of categories, the topics mentioned, and the publisher.\n    \n    File Descriptions\n    page_views.csv is a the log of users visiting documents. To save disk space, the timestamps in the entire dataset are relative to the first time in the dataset. If you wish to recover the actual epoch time of the visit, add 1465876799998 to the timestamp.\n    \n    uuid\n    document_id\n    timestamp (ms since 1970-01-01 - 1465876799998)\n    platform (desktop = 1, mobile = 2, tablet =3)\n    geo_location (country>state>DMA)\n    traffic_source (internal = 1, search = 2, social = 3)\n    clicks_train.csv is the training set, showing which of a set of ads was clicked.\n    \n    display_id\n    ad_id\n    clicked (1 if clicked,\n    0 otherwise)\n    clicks_test.csv is the same as clicks_train.csv, except it does not have the clicked ad. This is the file you should use to predict. Each display_id has only one clicked ad. Note that test set contains display_ids from the entire dataset timeframe. Additionally, the public/private sampling for the competition is uniformly random, not based on time. These sampling choices were intentional, in spite of the possibility that participants can look ahead in time.\n    \n    sample_submission.csv shows the correct submission format.\n    \n    events.csv provides information on the display_id context. It covers both the train and test set.\n    \n    display_id\n    uuid\n    document_id\n    timestamp\n    platform\n    geo_location\n    promoted_content.csv provides details on the ads.\n    \n    ad_id\n    document_id\n    campaign_id\n    advertiser_id\n    documents_meta.csv provides details on the documents.\n    \n    document_id\n    source_id (the part of the site on which the document is displayed, e.g. edition.cnn.com)\n    publisher_id\n    publish_time\n    documents_topics.csv, documents_entities.csv, and documents_categories.csv all provide information about the content in a document, as well as Outbrain's confidence in each respective relationship. For example, an entity_id can represent a person, organization, or location. The rows in documents_entities.csv give the confidence that the given entity was referred to in the document.\n"
+    },
+    {
+        "db_name": "production",
+        "url": ""
+    },
+    {
+        "db_name": "race",
+        "url": "https://www.kaggle.com/datasets/davidcochran/formula-1-race-data-sqlite",
+        "description": "### Context\n\nFormula 1 race data from the years 1950 to 2017. This data set is based on [Formula 1 Race Data by ChrisG](https://www.kaggle.com/cjgdev/formula-1-race-data-19502017). As [ChrisG indicated](https://www.kaggle.com/cjgdev/formula-1-race-data-19502017), the data was downloaded from http://ergast.com/mrd/ at the conclusion of the 2017 season.\n\nWe have simply converted the data from the original CSV files to an SQLite database, to enable queries with SQL.\n\n### Content\n\nWe have provided two SQLite files:\n- **Formula1.sqlite**: the entire database, with 13 tables (listed below)\n- **Formula1_4tables.sqlite**: featuring four tables: races, drivers, circuits, and results \n\n#### **Formula1.sqlite** contains these 13 tables:\n- circuits\n- constructor_standings\n- constructor_results\n- constructors\n- driver_standings\n- drivers\n- laptimes\n- pitstops\n- qualifying\n- races\n- results\n- seasons\n- status\n\n#### **Formula1_4tables.sqlite** contains these 4 tables:\n- circuits\n- drivers\n- races\n- results\n\n### To learn more about the data\n\n- Visit the original data set: [Formula 1 Race Data by ChrisG](https://www.kaggle.com/cjgdev/formula-1-race-data-19502017)\n- Visit the original data source: http://ergast.com/mrd/\n\n### Acknowledgements\n- [Dusty Gates](https://www.kaggle.com/dustygates) contributed to the conversion from CSV to SQLite.\n- As [ChrisG indicated](https://www.kaggle.com/cjgdev/formula-1-race-data-19502017), the data was originally gathered and published to the public domain by Chris Newell.\n\n### Inspiration\n\nA great data set for practicing SQL queries and proceeding to data preparation and EDA."
+    },
+    {
+        "db_name": "red_chamber",
+        "url": "https://wikidbs.github.io/"
+    },
+    {
+        "db_name": "sakila",
+        "url": "https://dev.mysql.com/doc/index-other.html",
+        "description": "The venerable sakila test database: small, fake database of movies."
+    },
+    {
+        "db_name": "sales",
+        "url": "https://www.kaggle.com/datasets/dillonmyrick/bike-store-sample-database",
+        "description": "This is the sample database from [sqlservertutorial.net](https://www.sqlservertutorial.net/sql-server-sample-database/). This is a great dataset for learning SQL and practicing querying relational databases.\n\nDatabase Diagram:\n\n![](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F4146319%2Fc5838eb006bab3938ad94de02f58c6c1%2FSQL-Server-Sample-Database.png?generation=1692609884383007&amp;alt=media)\n\n\n[Terms of Use](https://www.sqlservertutorial.net/terms-of-use/)\n\nThe sample database is copyrighted and cannot be used for commercial purposes. For example, it cannot be used for the following but is not limited to the purposes:\n- Selling\n- Including in paid courses"
+    },
+    {
+        "db_name": "spatiaLite_small",
+        "url": "https://osf.io/2ym95/",
+        "description": "\n\nThis Spatialite database is for parallel processing of spatial queries, test databases queries, create new method for indexing and test programs based on spatial data.\n\nAvailable data tables (name_type):\n\nbuildings_points\nlanduse_polygons\npois_polygons\nroads_lines\nwaterways_lines\nLicense: Open Data Commons Open Database License (ODbL) OpenStreetMap Foundation (OSMF). Please see license.txt file\n\n"
+    },
+    {
+        "db_name": "spotify",
+        "url": "https://www.kaggle.com/datasets/maltegrosse/8-m-spotify-tracks-genre-audio-features",
+        "description": "# Dataset\nThis dataset was created by Malte Grosse\n\nReleased under Data files © Original Authors\n\n# Contents\n"
+    },
+    {
+        "db_name": "tennis",
+        "url": "https://www.kaggle.com/datasets/guillemservera/tennis",
+        "description": "This dataset is a comprehensive collection of ATP tennis rankings, match results, and player statistics. It is derived from the original database created and maintained by Jeff Sackmann. **Original Work**: [Jeff Sackmann's Tennis ATP Database on GitHub](https://github.com/JeffSackmann/tennis_atp)\n\n\n## Dataset Contents\n\n### Player File\n- **Columns**: `player_id`, `first_name`, `last_name`, `hand`, `birth_date`, `country_code`, `height (cm)`\n\n### Ranking Files\n- **Columns**: `ranking_date`, `ranking`, `player_id`, `ranking_points`\n- **Coverage**: Mostly complete from 1985 to the present. Some years are missing or intermittent.\n\n### Match Results and Stats\n- **Files**: Up to three files per season, including tour-level main draw matches, tour-level qualifying and challenger main-draw matches, and futures matches.\n- **Columns**: Detailed in a `matches_data_dictionary.txt` file for further clarification.\n- **MatchStats**: Available from 1991-present for tour-level matches, 2008-present for challengers, and 2011-present for tour-level qualifying.\n\n### Doubles\n- **Files**: Tour-level doubles data available back to 2000.\n- **Note**: Updates for doubles are temporarily suspended as of late 2020.\n\n## Contributing\n\nIf you find any discrepancies or missing data, please refer to the original GitHub repository to file an issue or contribute.\n\n## License and Citation\n\nThis dataset is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. If you're using this dataset for academic or research purposes, please cite it properly.\n\n**Original Work**: [Jeff Sackmann's Tennis ATP Database on GitHub](https://github.com/JeffSackmann/tennis_atp)\n"
+    },
+    {
+        "db_name": "tvmaze",
+        "url": "https://www.kaggle.com/datasets/sahartj/tv-maze-dataset",
+        "description": "The Dataset was extracted from the TV Maze website. It contains 5 different files that can be used to analyze, classify and predict. \n\nThe TVMaze Dataset offers a comprehensive collection of metadata for television shows, providing valuable insights into the world of TV entertainment. With over 65,000 entries, this dataset encompasses a wide range of TV shows spanning various genres, formats, and production types. Each entry includes detailed information such as show name, description, genre tags, and more, making it a rich resource for exploring the vast landscape of television content.\n\n**Potential Applications:**\n\n- Genre Prediction: Build machine learning models to predict TV show genres based on metadata features, offering insights into genre trends and audience preferences.\n- Content Recommendation: Develop recommendation systems to suggest TV shows to users based on their preferences, viewing history, or content similarity.\n- Audience Analysis: Analyze viewer engagement and preferences across different genres, networks, or time periods to understand audience behavior and preferences.\n- Market Research: Conduct market research and trend analysis in the television industry by examining patterns in show popularity, genre distribution, and production trends.\n- NLP Applications: Explore natural language processing (NLP) techniques for analyzing show descriptions, generating show summaries, or extracting key insights from textual content.\n\n"
+    },
+    {
+        "db_name": "UK_arms",
+        "url": "https://www.kaggle.com/datasets/caatdata/uk-arms-export-licences?select=database.sqlite",
+        "description": "# UK Arms Export Data\n\nA list of all controlled goods approved or refused for export from the UK since January 2008.\n\nThe data is also available via a searchable application on the [Campaign Against Arms Trade](http://www.caat.org.uk/resources/export-licences) website, and in CSV format as a GitHub repository.\n\n## Source and Licence\n\nSource data from the [Strategic Export Controls database](https://www.exportcontroldb.berr.gov.uk/eng/fox) of the UK Department for Business, Innovation and Skills.\n\nAs UK government public sector information, this data is regarded as being covered by the [Open Government Licence](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).\n\n## Caveats\n\nDue to ambiguity in the source documents from which these data were compiled, the following columns may include some inaccuracies.\n\n-   Refusal criteria may contain some false-positive matches.\n-   Source and destination countries may contain some false-positive matches.\n-   Low price values may be inaccurate by one or two pounds.\n\n## Feedback\n\nContact [data@caat.org.uk](mailto:data@caat.org.uk) with any comments, questions or requests for specific data or alternative formats."
+    },
+    {
+        "db_name": "WDI",
+        "url": "https://www.kaggle.com/datasets/guillemservera/world-development-indicators?select=footnotes.csv",
+        "description": "### Kaggle Dataset Description\n\n#### Overview\n\nThis dataset is an **Updated and Curated Version** of the renowned **[World Development Indicators dataset by the World Bank](https://datacatalog.worldbank.org/search/dataset/0037712)**. Unlike other Kaggle datasets, this one is up-to-date and comprehensive.\n\n#### About the Original Dataset\n\nThe original World Development Indicators dataset is a public resource under the Creative Commons Attribution 4.0 license. It covers a wide array of topics such as Agriculture, Climate Change, Economic Growth, Education, and more. [Source](https://datacatalog.worldbank.org/search/dataset/0037712)\n\n#### Included Files\n\n- **WDIdatabase.sqlite**: A SQLite database for easier data manipulation.\n- `footnotes.csv`: Footnotes for data series.\n- `series.csv`: Metadata for each data series.\n- `indicators.csv`: Main File. All Development indicators.\n- `series_notes.csv`: Additional notes for series.\n- `country.csv`: Country information.\n- `country_notes.csv`: Country-specific notes.\n\n\n#### Use Cases\n\n- Global or country-specific economic and social development analysis.\n- Academic research in economics, public health, and social sciences.\n- Data visualization to understand global trends.\n\n#### Highlights\n\n- **Up-to-date**: Contains the latest available data.\n- **Curated**: Edited for ease of use, including column name adjustments and data type conversions.\n\n---\n\nPhoto by Porapak Apichodilok: [Link to Photo](https://www.pexels.com/photo/person-holding-world-globe-facing-mountain-346885/)"
+    },
+    {
+        "db_name": "wildfire",
+        "url": "https://www.kaggle.com/datasets/rtatman/188-million-us-wildfires/data",
+        "description": "### Context: \n\nThis data publication contains a spatial database of wildfires that occurred in the United States from 1992 to 2015. It is the third update of a publication originally generated to support the national Fire Program Analysis (FPA) system. The wildfire records were acquired from the reporting systems of federal, state, and local fire organizations. The following core data elements were required for records to be included in this data publication: discovery date, final fire size, and a point location at least as precise as Public Land Survey System (PLSS) section (1-square mile grid). The data were transformed to conform, when possible, to the data standards of the National Wildfire Coordinating Group (NWCG). Basic error-checking was performed and redundant records were identified and removed, to the degree possible. The resulting product, referred to as the Fire Program Analysis fire-occurrence database (FPA FOD), includes 1.88 million geo-referenced wildfire records, representing a total of 140 million acres burned during the 24-year period.\n\n### Content: \n\nThis dataset is an SQLite database that contains the following information:\n\n* Fires: Table including wildfire data for the period of 1992-2015 compiled from US federal, state, and local reporting systems.\n* FOD_ID = Global unique identifier.\n* FPA_ID = Unique identifier that contains information necessary to track back to the original record in the source dataset.\n* SOURCE_SYSTEM_TYPE = Type of source database or system that the record was drawn from (federal, nonfederal, or interagency).\n* SOURCE_SYSTEM = Name of or other identifier for source database or system that the record was drawn from. See Table 1 in Short (2014), or \\Supplements\\FPA_FOD_source_list.pdf, for a list of sources and their identifier.\n* NWCG_REPORTING_AGENCY = Active National Wildlife Coordinating Group (NWCG) Unit Identifier for the agency preparing the fire report (BIA = Bureau of Indian Affairs, BLM = Bureau of Land Management, BOR = Bureau of Reclamation, DOD = Department of Defense, DOE = Department of Energy, FS = Forest Service, FWS = Fish and Wildlife Service, IA = Interagency Organization, NPS = National Park Service, ST/C&amp;L = State, County, or Local Organization, and TRIBE = Tribal Organization).\n* NWCG_REPORTING_UNIT_ID = Active NWCG Unit Identifier for the unit preparing the fire report.\n* NWCG_REPORTING_UNIT_NAME = Active NWCG Unit Name for the unit preparing the fire report.\n* SOURCE_REPORTING_UNIT = Code for the agency unit preparing the fire report, based on code/name in the source dataset.\n* SOURCE_REPORTING_UNIT_NAME = Name of reporting agency unit preparing the fire report, based on code/name in the source dataset.\n* LOCAL_FIRE_REPORT_ID = Number or code that uniquely identifies an incident report for a particular reporting unit and a particular calendar year.\n* LOCAL_INCIDENT_ID = Number or code that uniquely identifies an incident for a particular local fire management organization within a particular calendar year.\n* FIRE_CODE = Code used within the interagency wildland fire community to track and compile cost information for emergency fire suppression (https://www.firecode.gov/).\n* FIRE_NAME = Name of the incident, from the fire report (primary) or ICS-209 report (secondary).\n* ICS_209_INCIDENT_NUMBER = Incident (event) identifier, from the ICS-209 report.\n* ICS_209_NAME = Name of the incident, from the ICS-209 report.\n* MTBS_ID = Incident identifier, from the MTBS perimeter dataset.\n* MTBS_FIRE_NAME = Name of the incident, from the MTBS perimeter dataset.\n* COMPLEX_NAME = Name of the complex under which the fire was ultimately managed, when discernible.\n* FIRE_YEAR = Calendar year in which the fire was discovered or confirmed to exist.\n* DISCOVERY_DATE = Date on which the fire was discovered or confirmed to exist.\n* DISCOVERY_DOY = Day of year on which the fire was discovered or confirmed to exist.\n* DISCOVERY_TIME = Time of day that the fire was discovered or confirmed to exist.\n* STAT_CAUSE_CODE = Code for the (statistical) cause of the fire.\n* STAT_CAUSE_DESCR = Description of the (statistical) cause of the fire.\n* CONT_DATE = Date on which the fire was declared contained or otherwise controlled (mm/dd/yyyy where mm=month, dd=day, and yyyy=year).\n* CONT_DOY = Day of year on which the fire was declared contained or otherwise controlled.\n* CONT_TIME = Time of day that the fire was declared contained or otherwise controlled (hhmm where hh=hour, mm=minutes).\n* FIRE_SIZE = Estimate of acres within the final perimeter of the fire.\n* FIRE_SIZE_CLASS = Code for fire size based on the number of acres within the final fire perimeter expenditures (A=greater than 0 but less than or equal to 0.25 acres, B=0.26-9.9 acres, C=10.0-99.9 acres, D=100-299 acres, E=300 to 999 acres, F=1000 to 4999 acres, and G=5000+ acres).\n* LATITUDE = Latitude (NAD83) for point location of the fire (decimal degrees).\n* LONGITUDE = Longitude (NAD83) for point location of the fire (decimal degrees).\n* OWNER_CODE = Code for primary owner or entity responsible for managing the land at the point of origin of the fire at the time of the incident.\n* OWNER_DESCR = Name of primary owner or entity responsible for managing the land at the point of origin of the fire at the time of the incident.\n* STATE = Two-letter alphabetic code for the state in which the fire burned (or originated), based on the nominal designation in the fire report.\n* COUNTY = County, or equivalent, in which the fire burned (or originated), based on nominal designation in the fire report.\n* FIPS_CODE = Three-digit code from the Federal Information Process Standards (FIPS) publication 6-4 for representation of counties and equivalent entities.\n* FIPS_NAME = County name from the FIPS publication 6-4 for representation of counties and equivalent entities.\n* NWCG_UnitIDActive_20170109: Look-up table containing all NWCG identifiers for agency units that were active (i.e., valid) as of 9 January 2017, when the list was downloaded from https://www.nifc.blm.gov/unit_id/Publish.html and used as the source of values available to populate the following fields in the Fires table: NWCG_REPORTING_AGENCY, NWCG_REPORTING_UNIT_ID, and NWCG_REPORTING_UNIT_NAME.\n* UnitId = NWCG Unit ID.\n* GeographicArea = Two-letter code for the geographic area in which the unit is located (NA=National, IN=International, AK=Alaska, CA=California, EA=Eastern Area, GB=Great Basin, NR=Northern Rockies, NW=Northwest, RM=Rocky Mountain, SA=Southern Area, and SW=Southwest).\n* Gacc = Seven or eight-letter code for the Geographic Area Coordination Center in which the unit is located or primarily affiliated with (CAMBCIFC=Canadian Interagency Forest Fire Centre, USAKCC=Alaska Interagency Coordination Center, USCAONCC=Northern California Area Coordination Center, USCAOSCC=Southern California Coordination Center, USCORMCC=Rocky Mountain Area Coordination Center, USGASAC=Southern Area Coordination Center, USIDNIC=National Interagency Coordination Center, USMTNRC=Northern Rockies Coordination Center, USNMSWC=Southwest Area Coordination Center, USORNWC=Northwest Area Coordination Center, USUTGBC=Western Great Basin Coordination Center, USWIEACC=Eastern Area Coordination Center).\n* WildlandRole = Role of the unit within the wildland fire community.\n* UnitType = Type of unit (e.g., federal, state, local).\n* Department = Department (or state/territory) to which the unit belongs (AK=Alaska, AL=Alabama, AR=Arkansas, AZ=Arizona, CA=California, CO=Colorado, CT=Connecticut, DE=Delaware, DHS=Department of Homeland Security, DOC= Department of Commerce, DOD=Department of Defense, DOE=Department of Energy, DOI= Department of Interior, DOL=Department of Labor, FL=Florida, GA=Georgia, IA=Iowa, IA/GC=Non-Departmental Agencies, ID=Idaho, IL=Illinois, IN=Indiana, KS=Kansas, KY=Kentucky, LA=Louisiana, MA=Massachusetts, MD=Maryland, ME=Maine, MI=Michigan, MN=Minnesota, MO=Missouri, MS=Mississippi, MT=Montana, NC=North Carolina, NE=Nebraska, NG=Non-Government, NH=New Hampshire, NJ=New Jersey, NM=New Mexico, NV=Nevada, NY=New York, OH=Ohio, OK=Oklahoma, OR=Oregon, PA=Pennsylvania, PR=Puerto Rico, RI=Rhode Island, SC=South Carolina, SD=South Dakota, ST/L=State or Local Government, TN=Tennessee, Tribe=Tribe, TX=Texas, USDA=Department of Agriculture, UT=Utah, VA=Virginia, VI=U. S. Virgin Islands, VT=Vermont, WA=Washington, WI=Wisconsin, WV=West Virginia, WY=Wyoming).\n* Agency = Agency or bureau to which the unit belongs (AG=Air Guard, ANC=Alaska Native Corporation, BIA=Bureau of Indian Affairs, BLM=Bureau of Land Management, BOEM=Bureau of Ocean Energy Management, BOR=Bureau of Reclamation, BSEE=Bureau of Safety and Environmental Enforcement, C&amp;L=County &amp; Local, CDF=California Department of Forestry &amp; Fire Protection, DC=Department of Corrections, DFE=Division of Forest Environment, DFF=Division of Forestry Fire &amp; State Lands, DFL=Division of Forests and Land, DFR=Division of Forest Resources, DL=Department of Lands, DNR=Department of Natural Resources, DNRC=Department of Natural Resources and Conservation, DNRF=Department of Natural Resources Forest Service, DOA=Department of Agriculture, DOC=Department of Conservation, DOE=Department of Energy, DOF=Department of Forestry, DVF=Division of Forestry, DWF=Division of Wildland Fire, EPA=Environmental Protection Agency, FC=Forestry Commission, FEMA=Federal Emergency Management Agency, FFC=Bureau of Forest Fire Control, FFP=Forest Fire Protection, FFS=Forest Fire Service, FR=Forest Rangers, FS=Forest Service, FWS=Fish &amp; Wildlife Service, HQ=Headquarters, JC=Job Corps, NBC=National Business Center, NG=National Guard, NNSA=National Nuclear Security Administration, NPS=National Park Service, NWS=National Weather Service, OES=Office of Emergency Services, PRI=Private, SF=State Forestry, SFS=State Forest Service, SP=State Parks, TNC=The Nature Conservancy, USA=United States Army, USACE=United States Army Corps of Engineers, USAF=United States Air Force, USGS=United States Geological Survey, USN=United States Navy).\n* Parent = Agency subgroup to which the unit belongs (A concatenation of State and Unit from this report - https://www.nifc.blm.gov/unit_id/publish/UnitIdReport.rtf).\n* Country = Country in which the unit is located (e.g. US = United States).\n* State = Two-letter code for the state in which the unit is located (or primarily affiliated).\n* Code = Unit code (follows state code to create UnitId).\n* Name = Unit name.\n\n### Acknowledgements: \n\nThese data were collected using funding from the U.S. Government and can be used without additional permissions or fees. If you use these data in a publication, presentation, or other research product please use the following citation:\n\nShort, Karen C. 2017. Spatial wildfire occurrence data for the United States, 1992-2015 [FPA_FOD_20170508]. 4th Edition. Fort Collins, CO: Forest Service Research Data Archive. https://doi.org/10.2737/RDS-2013-0009.4\n\n### Inspiration: \n\n* Have wildfires become more or less frequent over time?\n* What counties are the most and least fire-prone?\n* Given the size, location and date, can you predict the cause of a fire wildfire?\n"
+    },
+    {
+        "db_name": "wwe",
+        "url": "https://www.kaggle.com/datasets/alexdiresta/all-wwe-and-wwf-matches-from-4301979-to-92523",
+        "description": "[http://www.profightdb.com/](url)\nThis dataset contains the results and participants of every WWE, WWF, WWWF, ECW, NXT, and WCW match. This data extends from January 25, 1963 to the present day.\n\nThis dataset also uses many primary and secondary keys, so it makes for great practice while learning SQL and data architecture."
+    },
+    {
+        "db_name": "yeast",
+        "url": "https://www.kaggle.com/datasets/raulgcova/yeast-database",
+        "description": "# **Yeast.sqlite Database**\n\nSQLite Browser database containing processed (filtered) read counts from the dataset \"Transcriptomics in yeast\" from CostalAether ([original dataset](https://www.kaggle.com/costalaether/yeast-transcriptomics)). This database is used as the basis for the [Differential Gene Expression](https://www.kaggle.com/raulgcova/differential-gene-expression) analysis of yeast transcriptomic under different growth conditions.\n\n# Content\nEach table in the database represents the different original files from the dataset \"Transcriptomic in yeast\" and unique relational ID´s. \n### The meaning of each table is the following\n| Table name | Meaning |\n| --- | --- |\n| Bioprocess | Table with all the biological processes each gene haves  |\n| Description  | Table with all growth conditions |\n| Expression |**Table with all the relational IDs for ALL OTHER TABLES and their respective transcript rate** (This table serves as the Master Table as it contains all the information in an organized way |\n| Genes |Table with all the genes names |\n| Member | Table relating the ID´s between the tables Genes, Molecular, Locations, and Bioprocess  |\n| Molecular |Table with all the molecular functions |\n| Relation  |Table relating the ID´s between the tables Treatment and Description|\n|Treatment  |Table with all the growth condition identification codes |\n| Locations |Table with all the cellular compartments |\n\nThe **data is stored in a relational ID form** such that to retrieve data for posterior use using python the following code needs to be used (**Remember to previously upload the yeast.sqlite database to your kernel**) :\n```\nimport pandas as pd\nimport sqlite3\nyeast=\"../input/yeast-database/yeast.sqlite\"\nconn=sqlite3.connect(yeast)\ncur=conn.cursor()\n\ndf=pd.read_sql_query('''SELECT Expression.transcripts, Genes.name, Description.meaning,Molecular.function,Treatment.condition,locations.location,Bioprocess.process\n                  FROM Expression JOIN Genes JOIN Description JOIN Molecular JOIN Treatment JOIN locations JOIN Bioprocess\n                ON Expression.gene_id=Genes.id AND Expression.meaning_id=Description.id AND Expression.treatment_id=Treatment.id\n                AND Expression.function_id=Molecular.id AND Expression.location_id=locations.id AND Expression.bioprocess_id=Bioprocess.id''', conn)\n```\n\n\n### Acknowledgements\n\nThanks to [CostalAether](https://www.kaggle.com/costalaether) for the original database, which serve as an inspiration for this work. As CostalAether, I same hope to boost the biology/genetic/biotechnology community in Kaggle so feel free to use it as you need to.\nFor any doubt visit [my webpage](https://raulgcova97.wixsite.com/biotechdata) for more info about the creation of this database or send me an email.\n"
+    },
+    {
+        "db_name": "yelp",
+        "url": "https://www.kaggle.com/datasets/tomyanowitz/yelp-dataset-truncated-to-10k-rows/data",
+        "description": "# Dataset\nThis dataset was created by Tom Yanowitz\n\nReleased under MIT\n\n# Contents\n"
+    },
+    {
+        "db_name": "Accidents",
+        "url": "",
+        "description": "Traffic accident database consists of all accidents that happened in Slovenia’s capital city Ljubljana between the years 1995 and 2005."
+    },
+    {
+        "db_name": "AdventureWorks2014",
+        "url": "",
+        "description": "Adventure Works 2014 (OLTP version) is a sample database for Microsoft SQL Server, which has replaced Northwind and Pub sample databases that were shipped earlier. The database is about a fictious, multinational bicycle manufacturer called Adventure Works Cycles."
+    },
+    {
+        "db_name": "Atherosclerosis",
+        "url": "",
+        "description": "The study STULONG is a longitudinal 20 years lasting primary preventive study of middle-aged men. The study aims to identify prevalence of atherosclerosis RFs in a population generally considered to be the most endangered by possible atherosclerosis complications, i.e., middle-aged men."
+    },
+    {
+        "db_name": "Basketball_men",
+        "url": "",
+        "description": "The task is to predict rank of teams."
+    },
+    {
+        "db_name": "Basketball_women",
+        "url": "",
+        "description": "The task is to predict whether the team plays playoff, or not."
+    },
+    {
+        "db_name": "classicmodels",
+        "url": "",
+        "description": "The schema is for Classic Models, a retailer of scale models of classic cars. The database contains typical business data such as customers, orders, order line items, products and so on."
+    },
+    {
+        "db_name": "ErgastF1",
+        "url": "",
+        "description": "Ergast.com is a webservice that provides a database of Formula 1 races, starting from the 1950 season until today. The dataset includes information such as the time taken in each lap, the time taken for pit stops, the performance in the qualifying rounds etc. of all Formula 1 races from 1950 to 2017. The task is to predict the winner (or tied winners) of a race with the data available up to the start of the race (e.g., the list of the race attendees and qualifying times are known but their lap times in the race are not known)."
+    },
+    {
+        "db_name": "financial",
+        "url": "",
+        "description": "PKDD'99 Financial dataset contains 606 successful and 76 not successful loans along with their information and transactions. The standard task is to predict the loan outcome for finished loans (A vs B in loan.status) at the time of the loan start (defined by loan.date). Note: Two factors have a great impact on the reported model's accuracy in the references: 1) Was the temporal constraint respected? 2) Was the problem formulated as (A vs B), or (A vs B vs C vs D)? If the temporal constraint is ignored, good loans (A, C) can be perfectly separated from bad loans (B, D) with: if min(trans.balance) >= 0 then good else bad. Finished loans (A, B) can be perfectly separated from unfinished loans (C, D) with: if loan.date + loan.duration >= 1999-01-01 then unfinished else finished."
+    },
+    {
+        "db_name": "geneea",
+        "url": "",
+        "description": "Data on deputies and senators in the Czech Republic."
+    },
+    {
+        "db_name": "Grants",
+        "url": "",
+        "description": "This dataset includes funding grants from the National Science Foundation. The task is to predict the award amount."
+    },
+    {
+        "db_name": "Hockey",
+        "url": "",
+        "description": "The Hockey Database follows the same general design as the Lahman Baseball Database. In addition to the NHL, the Hockey DB covers the following early and alternative leagues: NHA, PCHA, WCHL and WHA. It contains individual and team statistics from 1909-10 through the 2011-12 season."
+    },
+    {
+        "db_name": "lahman_2014",
+        "url": "",
+        "description": "Lahman's baseball database contains complete batting and pitching statistics from 1871 to 2014, plus fielding statistics, standings, team stats, managerial records, post-season data, and more."
+    },
+    {
+        "db_name": "legalActs",
+        "url": "",
+        "description": "Bulgarian court decision metadata."
+    },
+    {
+        "db_name": "medical",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "Mondial_geo",
+        "url": "",
+        "description": "A geography dataset from University of Göttingen describes 114 Christian countries and 71 non-Christian countries."
+    },
+    {
+        "db_name": "NCAA",
+        "url": "",
+        "description": "2015 NCAA Basketball Tournament."
+    },
+    {
+        "db_name": "northwind",
+        "url": "",
+        "description": "The Northwind database contains the sales data for a fictitious company called Northwind Traders, which imports and exports specialty foods from around the world."
+    },
+    {
+        "db_name": "stats",
+        "url": "",
+        "description": "An anonymized dump of all user-contributed content on the Stats Stack Exchange network."
+    },
+    {
+        "db_name": "tpcc",
+        "url": "",
+        "description": "TPC-C is the benchmark published by the Transaction Processing Performance Council (TPC) for Online Transaction Processing (OLTP)."
+    },
+    {
+        "db_name": "voc",
+        "url": "",
+        "description": "VOC database provides a peephole view into the administrative system of an early multi-national company, the Vereenigde geoctrooieerde Oostindische Compagnie (VOC for short - The (Dutch) East Indian Company) established on March 20, 1602."
+    },
+    {
+        "db_name": "baseball_1",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "battle_death",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "body_builder",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "candidate_poll",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "chinook_1",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "customer_complaints",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "driving_school",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "flight_1",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "gymnast",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "icfp_1",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "machine_repair",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "medicine_enzyme_interaction",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "mountain_photos",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "music_4",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "riding_club",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "school_bus",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "ship_mission",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "small_bank_1",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "soccer_1",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "store_1",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "tracking_software_problems",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "coinmarketcap",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "endoflife_date",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "oh_sp_ct_dockets",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "Peronal_world_development_indicators",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "recommenderDb",
+        "url": "",
+        "description": ""
+    },
+    {
+        "db_name": "shark_attacks_ncl",
+        "url": "",
+        "description": ""
+    }
+]

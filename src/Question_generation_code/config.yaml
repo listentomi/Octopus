@@ -1,0 +1,8 @@
+api:
+  key: "your key"
+
+
+mysql:
+  user: 'root'
+  password: '123456'
+  host: 'localhost'

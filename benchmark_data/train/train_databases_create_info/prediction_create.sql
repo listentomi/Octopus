@@ -1,0 +1,42 @@
+CREATE TABLE "clicks_train" ("display_id" VARCHAR(255),
+"ad_id" VARCHAR(255),
+"clicked" INTEGER,
+"TRIAL031" CHAR(1),
+CONSTRAINT "clicks_train_ibfk_1" FOREIGN KEY("ad_id") REFERENCES "promoted_content"("ad_id") ON UPDATE NO ACTION ON DELETE NO ACTION,
+CONSTRAINT "clicks_train_ibfk_2" FOREIGN KEY("display_id") REFERENCES "events"("display_id") ON UPDATE NO ACTION ON DELETE NO ACTION);
+CREATE TABLE "documents_categories" ("document_id" VARCHAR(255),
+"category_id" VARCHAR(255),
+"confidence_level" REAL,
+"TRIAL211" CHAR(1),
+CONSTRAINT "documents_categories_ibfk_1" FOREIGN KEY("document_id") REFERENCES "documents_meta"("document_id") ON UPDATE NO ACTION ON DELETE NO ACTION);
+CREATE TABLE "documents_entities" ("document_id" VARCHAR(255),
+"entity_id" VARCHAR(255),
+"confidence_level" REAL,
+"TRIAL224" CHAR(1),
+CONSTRAINT "documents_entities_ibfk_1" FOREIGN KEY("document_id") REFERENCES "documents_meta"("document_id") ON UPDATE NO ACTION ON DELETE NO ACTION);
+CREATE TABLE "documents_meta" ("document_id" VARCHAR(255) NOT NULL,
+"source_id" VARCHAR(255),
+"publisher_id" VARCHAR(255),
+"publish_time" VARCHAR(255),
+"TRIAL243" CHAR(1),
+CONSTRAINT "pk_documents_meta" PRIMARY KEY("document_id"));
+CREATE TABLE "events" ("display_id" VARCHAR(255),
+"uuid" VARCHAR(255),
+"document_id" VARCHAR(255),
+"timestamp" VARCHAR(255),
+"platform" INTEGER,
+"geo_location" VARCHAR(255),
+"TRIAL247" CHAR(1));
+CREATE TABLE "page_views_sample" ("uuid" VARCHAR(255),
+"document_id" VARCHAR(255),
+"timestamp" VARCHAR(255),
+"platform" VARCHAR(255),
+"geo_location" VARCHAR(255),
+"traffic_source" INTEGER,
+"TRIAL309" CHAR(1));
+CREATE TABLE "promoted_content" ("ad_id" VARCHAR(255) NOT NULL,
+"document_id" VARCHAR(255),
+"campaign_id" INTEGER,
+"advertiser_id" INTEGER,
+"TRIAL318" CHAR(1),
+CONSTRAINT "pk_promoted_content" PRIMARY KEY("ad_id"));

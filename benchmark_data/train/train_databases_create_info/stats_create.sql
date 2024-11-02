@@ -1,0 +1,108 @@
+CREATE TABLE "badges" (
+	"Id" INTEGER NOT NULL  ,
+	"UserId" INTEGER NULL  ,
+	"Name" VARCHAR(255) NULL  ,
+	"Date" DATETIME NULL  ,
+	PRIMARY KEY ("Id"),
+	FOREIGN KEY("UserId") REFERENCES "users" ("Id") ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE "comments" (
+	"Id" INTEGER NOT NULL  ,
+	"PostId" INTEGER NULL  ,
+	"Score" INTEGER NULL  ,
+	"Text" TEXT NULL  ,
+	"CreationDate" DATETIME NULL  ,
+	"UserId" INTEGER NULL  ,
+	"UserDisplayName" VARCHAR(255) NULL  ,
+	PRIMARY KEY ("Id"),
+	FOREIGN KEY("PostId") REFERENCES "posts" ("Id") ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY("UserId") REFERENCES "users" ("Id") ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE "posthistory" (
+	"Id" INTEGER NOT NULL  ,
+	"PostHistoryTypeId" INTEGER NULL  ,
+	"PostId" INTEGER NULL  ,
+	"RevisionGUID" VARCHAR(255) NULL  ,
+	"CreationDate" DATETIME NULL  ,
+	"UserId" INTEGER NULL  ,
+	"Text" TEXT NULL  ,
+	"Comment" TEXT NULL  ,
+	"UserDisplayName" VARCHAR(255) NULL  ,
+	PRIMARY KEY ("Id"),
+	FOREIGN KEY("PostId") REFERENCES "posts" ("Id") ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY("UserId") REFERENCES "users" ("Id") ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE "postlinks" (
+	"Id" INTEGER NOT NULL  ,
+	"CreationDate" DATETIME NULL  ,
+	"PostId" INTEGER NULL  ,
+	"RelatedPostId" INTEGER NULL  ,
+	"LinkTypeId" INTEGER NULL  ,
+	PRIMARY KEY ("Id"),
+	FOREIGN KEY("PostId") REFERENCES "posts" ("Id") ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY("RelatedPostId") REFERENCES "posts" ("Id") ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE "posts" (
+	"Id" INTEGER NOT NULL  ,
+	"PostTypeId" INTEGER NULL  ,
+	"AcceptedAnswerId" INTEGER NULL  ,
+	"CreaionDate" DATETIME NULL  ,
+	"Score" INTEGER NULL  ,
+	"ViewCount" INTEGER NULL  ,
+	"Body" TEXT NULL  ,
+	"OwnerUserId" INTEGER NULL  ,
+	"LasActivityDate" DATETIME NULL  ,
+	"Title" VARCHAR(255) NULL  ,
+	"Tags" VARCHAR(255) NULL  ,
+	"AnswerCount" INTEGER NULL  ,
+	"CommentCount" INTEGER NULL  ,
+	"FavoriteCount" INTEGER NULL  ,
+	"LastEditorUserId" INTEGER NULL  ,
+	"LastEditDate" DATETIME NULL  ,
+	"CommunityOwnedDate" DATETIME NULL  ,
+	"ParentId" INTEGER NULL  ,
+	"ClosedDate" DATETIME NULL  ,
+	"OwnerDisplayName" VARCHAR(255) NULL  ,
+	"LastEditorDisplayName" VARCHAR(255) NULL  ,
+	PRIMARY KEY ("Id"),
+	FOREIGN KEY("LastEditorUserId") REFERENCES "users" ("Id") ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY("OwnerUserId") REFERENCES "users" ("Id") ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY("ParentId") REFERENCES "posts" ("Id") ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE "tags" (
+	"Id" INTEGER NOT NULL  ,
+	"TagName" VARCHAR(255) NULL  ,
+	"Count" INTEGER NULL  ,
+	"ExcerptPostId" INTEGER NULL  ,
+	"WikiPostId" INTEGER NULL  ,
+	PRIMARY KEY ("Id"),
+	FOREIGN KEY("ExcerptPostId") REFERENCES "posts" ("Id") ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE "users" (
+	"Id" INTEGER NOT NULL  ,
+	"Reputation" INTEGER NULL  ,
+	"CreationDate" DATETIME NULL  ,
+	"DisplayName" VARCHAR(255) NULL  ,
+	"LastAccessDate" DATETIME NULL  ,
+	"WebsiteUrl" VARCHAR(255) NULL  ,
+	"Location" VARCHAR(255) NULL  ,
+	"AboutMe" TEXT NULL  ,
+	"Views" INTEGER NULL  ,
+	"UpVotes" INTEGER NULL  ,
+	"DownVotes" INTEGER NULL  ,
+	"AccountId" INTEGER NULL  ,
+	"Age" INTEGER NULL  ,
+	"ProfileImageUrl" VARCHAR(255) NULL  ,
+	PRIMARY KEY ("Id")
+);
+CREATE TABLE "votes" (
+	"Id" INTEGER NOT NULL  ,
+	"PostId" INTEGER NULL  ,
+	"VoteTypeId" INTEGER NULL  ,
+	"CreationDate" DATE NULL  ,
+	"UserId" INTEGER NULL  ,
+	"BountyAmount" INTEGER NULL  ,
+	PRIMARY KEY ("Id"),
+	FOREIGN KEY("PostId") REFERENCES "posts" ("Id") ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY("UserId") REFERENCES "users" ("Id") ON UPDATE CASCADE ON DELETE CASCADE
+);
